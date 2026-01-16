@@ -115,17 +115,15 @@ fun Recipe(recipe: CardItem) {
 
     Card(
         shape = RoundedCornerShape(16.dp),
-        //elevation = CardDefaults.cardElevation(defaultElevation = 4.dp),
         modifier = Modifier
             .padding(16.dp)
             .fillMaxWidth()
             .clickable {
-                navController?.navigate("recipeDetail/$recipe")
+                navController?.navigate("recipeDetail/${recipe.id}")
             },
         border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant),
     ) {
         Column(modifier = Modifier.background(color = MaterialTheme.colorScheme.background)) {
-            TaskList()
             Box {
                 Image(
                     painter = painterResource(id = recipe.image), // Replace with your image

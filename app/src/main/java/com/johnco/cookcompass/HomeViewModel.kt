@@ -20,6 +20,7 @@ class HomeViewModel: ViewModel() {
         viewModelScope.launch {
             _cards.value = arrayListOf(
                 CardItem(
+                    1,
                     R.drawable.classic_spaghetti_carbonara,
                     "Classic Spaghetti Carbonara",
                     "A traditional Italian pasta dish with eggs, chesse, and pancetta.",
@@ -51,6 +52,7 @@ class HomeViewModel: ViewModel() {
                         )
                     )
                 ), CardItem(
+                    2,
                     R.drawable.avocado_toast,
                     "Avocado Toast",
                     "Simple and healthy breakfast with mashed avocado on toasted bread",

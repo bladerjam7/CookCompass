@@ -71,9 +71,10 @@ fun RecipeDetailScreen(
     val context = LocalContext.current
 
     val card = homeViewModel.cards.collectAsState()
+
     val recipeItem =
         recipeId?.let {
-            card.value[recipeId]
+            card.value.find { it.id == recipeId }
         } ?: run {
             navController?.navigateUp()
             Toast.makeText(context, "Recipe not found", Toast.LENGTH_SHORT).show()

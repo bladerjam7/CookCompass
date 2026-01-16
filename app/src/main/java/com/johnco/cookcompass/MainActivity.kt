@@ -13,9 +13,11 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.compositionLocalOf
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.navigation.NavController
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import com.johnco.cookcompass.ui.theme.CookCompassTheme
 
 val LocalNavController = compositionLocalOf<NavController?> {
@@ -72,9 +74,11 @@ class MainActivity : ComponentActivity() {
                     HomeScreen()
                 }
 
-                composable(route = "recipeDetail/{recipe}") { backStackEntry ->
-                    val recipe = backStackEntry.arguments?.getInt("recipe")
-                    RecipeDetailScreen(recipe)
+                composable(route = "recipeDetail/{recipeId}",
+                    arguments = listOf(navArgument("recipeId") { type = NavType.IntType })
+                ) { backStackEntry ->
+                    val recipeId = backStackEntry.arguments?.getInt("recipeId")
+                    RecipeDetailScreen(recipeId)
                 }
             }
         }
