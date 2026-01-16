@@ -29,10 +29,7 @@ Cook Compass is a clean, modern Android recipe app that helps users discover, sa
 * **UI:** Jetpack Compose
 * **Architecture:** MVVM (Model–View–ViewModel)
 * **State Management:** State / Flow
-* **Image Loading:** Coil
 * **Navigation:** Jetpack Navigation Compose
-* **Dependency Injection:** Hilt (optional / if used)
-* **Persistence:** Room / DataStore (optional / if used)
 
 ## 🧱 Architecture
 
