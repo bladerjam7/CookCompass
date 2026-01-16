@@ -45,16 +45,13 @@ import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.johnco.cookcompass.model.CardItem
-import com.johnco.cookcompass.ui.theme.CookCompassTheme
 import com.johnco.cookcompass.ui.theme.RecipeDescriptionStyle
 import com.johnco.cookcompass.ui.theme.RecipeTagsStyle
-import com.johnco.cookcompass.ui.theme.RecipeTitleStyle
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -189,7 +186,7 @@ fun Recipe(recipe: CardItem) {
                     horizontalArrangement = Arrangement.spacedBy(8.dp),
                     verticalArrangement = Arrangement.spacedBy(8.dp)
                 ) {
-                    for (i in 0..recipe.tags.size - 1) {
+                    for (i in 0..< recipe.tags.size - 1) {
                         if (i > 2) {
                             TagChip("+${recipe.tags.size - 3}")
                             break
